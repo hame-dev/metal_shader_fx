@@ -1,8 +1,12 @@
-# metallic_shine
+# metal_shader_fx
 
 Physically-based metallic border shine effects for Flutter widgets. Features a full **Cook-Torrance microfacet BRDF** adapted for UI border rings — the same math used in game engines and 3D renderers, now running on your buttons, toggles, and text fields.
 
-![metallic shine preview](assets/images/image.gif)
+| Button | Toggle | Text Field |
+|---|---|---|
+| ![metallic button](assets/images/button.png) | ![metallic toggle](assets/images/toggle.png) | ![metallic text field](assets/images/textfield.png) |
+
+![metallic shine preview gif](assets/images/image.gif)
 
 ## Features
 
@@ -28,7 +32,7 @@ Physically-based metallic border shine effects for Flutter widgets. Features a f
 
 ```yaml
 dependencies:
-  metallic_shine: ^1.0.0
+  metallic_shine: ^0.1.2
 ```
 
 ## Quick Start
