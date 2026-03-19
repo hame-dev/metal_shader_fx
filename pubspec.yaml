@@ -1,0 +1,20 @@
+name: metal_shader_fx
+description: Physically-based metallic border shine effects for Flutter — Cook-Torrance BRDF metallic shine on buttons, toggles, and text fields.
+version: 0.1.0
+homepage: https://github.com/abdullrahmanbahar/metal_shader_fx
+
+environment:
+  sdk: ^3.11.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

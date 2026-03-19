@@ -1,0 +1,21 @@
+## 1.0.0
+
+- Initial release
+- `MetalToggleCard` — animated toggle with metallic thumb shine
+- `MetallicBorderButton` — button with Cook-Torrance BRDF border shine
+- `MetallicBorderTextField` — text field with focus-responsive metallic border
+- `PhysicalMetalShinePainter` — standalone painter for custom widgets
+- `MetalMaterialConfig` — full material property control with presets:
+  - `.chrome()` — polished mirror
+  - `.brushedSteel()` — directional anisotropic
+  - `.anodized()` — heavy iridescent thin-film
+  - `.gold()` — warm high-reflectance
+- Cook-Torrance microfacet BRDF (GGX NDF + Schlick Fresnel + Smith G)
+- Per-channel thin-film interference (620nm / 530nm / 460nm)
+- Anisotropic highlight stretch with configurable brush direction
+- Energy conservation via running budget
+- Dual-lobe environment map (key + fill light)
+- Corner caustics with radial bloom
+- Inverse-square distance attenuation
+- 5-frequency micro-scratch shimmer
+- Radial cross-section torus lighting
