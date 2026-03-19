@@ -32,13 +32,13 @@ Physically-based metallic border shine effects for Flutter widgets. Features a f
 
 ```yaml
 dependencies:
-  metallic_shine: ^0.1.2
+  metal_shader_fx: ^0.1.3
 ```
 
 ## Quick Start
 
 ```dart
-import 'package:metallic_shine/metallic_shine.dart';
+import 'package:metal_shader_fx/metal_shader_fx.dart';
 
 // Toggle
 MetalToggleCard(
