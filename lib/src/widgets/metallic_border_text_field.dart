@@ -215,7 +215,7 @@ class _MetallicBorderTextFieldState extends State<MetallicBorderTextField>
     );
 
     final defaultHintStyle = TextStyle(
-      color: Colors.black.withOpacity(0.34),
+      color: Colors.black.withValues(alpha: 0.34),
       fontSize: 16,
     );
 
@@ -248,13 +248,13 @@ class _MetallicBorderTextFieldState extends State<MetallicBorderTextField>
               color: bg,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.04),
+                  color: Colors.black.withValues(alpha: 0.04),
                   blurRadius: 12,
                   offset: const Offset(0, 6),
                 ),
                 if (focused)
                   BoxShadow(
-                    color: widget.color.withOpacity(0.15),
+                    color: widget.color.withValues(alpha: 0.15),
                     blurRadius: 20,
                     spreadRadius: 2,
                   ),

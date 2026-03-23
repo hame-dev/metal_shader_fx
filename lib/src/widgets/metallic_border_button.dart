@@ -172,7 +172,7 @@ class _MetallicBorderButtonState extends State<MetallicBorderButton>
                   boxShadow: [
                     BoxShadow(
                       color: Color.lerp(base, Colors.black, 0.55)!
-                          .withOpacity(widget.enabled ? 0.30 : 0.12),
+                          .withValues(alpha: widget.enabled ? 0.30 : 0.12),
                       blurRadius: 18,
                       offset: const Offset(0, 10),
                     ),

@@ -111,10 +111,10 @@ class PhysicalMetalShinePainter extends CustomPainter {
     if (material.filmThickness <= 0.001) return base;
     final rgb = _thinFilmRGB(cosTheta);
     return Color.fromARGB(
-      base.alpha,
-      (base.red * rgb[0]).round().clamp(0, 255),
-      (base.green * rgb[1]).round().clamp(0, 255),
-      (base.blue * rgb[2]).round().clamp(0, 255),
+      (base.a * 255.0).round().clamp(0, 255),
+      (base.r * 255.0 * rgb[0]).round().clamp(0, 255),
+      (base.g * 255.0 * rgb[1]).round().clamp(0, 255),
+      (base.b * 255.0 * rgb[2]).round().clamp(0, 255),
     );
   }
 
@@ -147,7 +147,7 @@ class PhysicalMetalShinePainter extends CustomPainter {
     final metalDark = Color.lerp(tint, const Color(0xFF111111), 0.82)!;
     final metalMid = Color.lerp(tint, const Color(0xFF7A7A7A), 0.52)!;
     final tintBright = Color.lerp(tint, Colors.white, 0.42)!;
-    final white98 = Colors.white.withOpacity(0.98);
+    final white98 = Colors.white.withValues(alpha: 0.98);
 
     // ── Shimmer ──
     final shim = _shimmer(rotation);
@@ -186,14 +186,14 @@ class PhysicalMetalShinePainter extends CustomPainter {
       Paint()
         ..style = PaintingStyle.stroke
         ..strokeWidth = ringWidth * 0.35
-        ..color = Colors.white.withOpacity(0.12 * energy),
+        ..color = Colors.white.withValues(alpha: 0.12 * energy),
     );
     canvas.drawPath(
       innerPath,
       Paint()
         ..style = PaintingStyle.stroke
         ..strokeWidth = ringWidth * 0.35
-        ..color = Colors.black.withOpacity(0.08 * energy),
+        ..color = Colors.black.withValues(alpha: 0.08 * energy),
     );
 
     // ==================================================================
@@ -230,9 +230,9 @@ class PhysicalMetalShinePainter extends CustomPainter {
           transform: GradientRotation(fillOffset),
           colors: [
             Colors.transparent,
-            metalMid.withOpacity(0.25),
-            Colors.white.withOpacity(0.35),
-            metalMid.withOpacity(0.20),
+            metalMid.withValues(alpha: 0.25),
+            Colors.white.withValues(alpha: 0.35),
+            metalMid.withValues(alpha: 0.20),
             Colors.transparent,
             Colors.transparent,
             Colors.transparent,
@@ -371,7 +371,7 @@ class PhysicalMetalShinePainter extends CustomPainter {
         ..style = PaintingStyle.stroke
         ..strokeWidth = ringWidth * strokeWidthRatio * (1.0 - t * 0.35)
         ..strokeCap = StrokeCap.round
-        ..color = segColor.withOpacity(segmentOpacity);
+        ..color = segColor.withValues(alpha: segmentOpacity);
 
       if (i == 0) {
         _drawWrappedSegment(canvas, metric, pathLength,
@@ -420,7 +420,7 @@ class PhysicalMetalShinePainter extends CustomPainter {
           ..style = PaintingStyle.stroke
           ..strokeWidth = ringWidth * 0.5
           ..strokeCap = StrokeCap.round
-          ..color = rimColor.withOpacity(0.20 * energy * fres),
+          ..color = rimColor.withValues(alpha: 0.20 * energy * fres),
       );
     }
   }
@@ -461,7 +461,7 @@ class PhysicalMetalShinePainter extends CustomPainter {
           ..shader = RadialGradient(
             colors: [
               Color.lerp(tint, Colors.white, 0.7)!
-                  .withOpacity(0.18 * intensity),
+                  .withValues(alpha: 0.18 * intensity),
               Colors.transparent,
             ],
           ).createShader(
@@ -479,7 +479,7 @@ class PhysicalMetalShinePainter extends CustomPainter {
           ..strokeWidth = ringWidth * 0.3
           ..strokeCap = StrokeCap.round
           ..color =
-              Colors.white.withOpacity((0.55 * intensity).clamp(0.0, 1.0)),
+              Colors.white.withValues(alpha: (0.55 * intensity).clamp(0.0, 1.0)),
       );
 
       // Thin-film tinted caustic
@@ -494,7 +494,7 @@ class PhysicalMetalShinePainter extends CustomPainter {
           ..strokeWidth = ringWidth * 0.2
           ..strokeCap = StrokeCap.round
           ..color = Color.lerp(filmCaustic, Colors.white, 0.5)!
-              .withOpacity((0.3 * intensity).clamp(0.0, 1.0)),
+              .withValues(alpha: (0.3 * intensity).clamp(0.0, 1.0)),
       );
     }
   }

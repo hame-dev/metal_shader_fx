@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 /// Configuration for the physically-based metal material properties.
 ///
 /// Controls the appearance of the metallic shine effect across all widgets.

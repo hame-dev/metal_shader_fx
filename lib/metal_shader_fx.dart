@@ -19,7 +19,7 @@
 ///
 /// For advanced usage, use [PhysicalMetalShinePainter] directly
 /// in your own [CustomPaint] widgets.
-library metallic_shine;
+library;
 
 export 'src/models/metal_material_config.dart';
 export 'src/painters/physical_metal_shine_painter.dart';

@@ -97,19 +97,19 @@ class MetalToggleCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(cardBorderRadius),
-        color: Colors.white.withOpacity(0.84),
+        color: Colors.white.withValues(alpha: 0.84),
         border: Border.all(
-          color: Colors.white.withOpacity(0.92),
+          color: Colors.white.withValues(alpha: 0.92),
           width: 1.2,
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.045),
+            color: Colors.black.withValues(alpha: 0.045),
             blurRadius: 28,
             offset: const Offset(0, 14),
           ),
           BoxShadow(
-            color: Colors.white.withOpacity(0.95),
+            color: Colors.white.withValues(alpha: 0.95),
             blurRadius: 12,
             offset: const Offset(-4, -4),
             spreadRadius: -2,
@@ -206,31 +206,31 @@ class _PremiumMetalToggle extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    trackHighlight.withOpacity(0.78),
+                    trackHighlight.withValues(alpha: 0.78),
                     trackBase,
-                    trackBase.withOpacity(0.97),
+                    trackBase.withValues(alpha: 0.97),
                   ],
                 ),
                 border: Border.all(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   width: 1.5,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.white.withOpacity(0.92),
+                    color: Colors.white.withValues(alpha: 0.92),
                     blurRadius: 10,
                     offset: const Offset(-3, -3),
                     spreadRadius: -2,
                   ),
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.08),
+                    color: Colors.black.withValues(alpha: 0.08),
                     blurRadius: 18,
                     offset: const Offset(4, 8),
                     spreadRadius: -4,
                   ),
                   if (value)
                     BoxShadow(
-                      color: ambientGlow.withOpacity(0.30),
+                      color: ambientGlow.withValues(alpha: 0.30),
                       blurRadius: 18,
                       spreadRadius: 1.5,
                     ),
@@ -343,12 +343,12 @@ class _PremiumMetalThumbState extends State<_PremiumMetalThumb>
               boxShadow: [
                 BoxShadow(
                   color:
-                      outerGlow.withOpacity(widget.active ? 0.35 : 0.10),
+                      outerGlow.withValues(alpha: widget.active ? 0.35 : 0.10),
                   blurRadius: widget.active ? 20 : 8,
                   spreadRadius: widget.active ? 2.0 : 0,
                 ),
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.12),
+                  color: Colors.black.withValues(alpha: 0.12),
                   blurRadius: 14,
                   offset: const Offset(2, 7),
                 ),

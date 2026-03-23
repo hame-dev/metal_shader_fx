@@ -1,4 +1,19 @@
-## 1.0.0
+## 0.1.4
+
+- Fix deprecated `withOpacity()` calls — migrated to `withValues(alpha:)` across all widgets
+- Fix deprecated `Color.alpha`, `Color.red`, `Color.green`, `Color.blue` getters — migrated to new `Color.a`, `Color.r`, `Color.g`, `Color.b` API
+- Remove unused `package:flutter/material.dart` import from `MetalMaterialConfig`
+- Remove unnecessary library name from barrel export file
+
+## 0.1.3
+
+- Fix package name import
+
+## 0.1.2
+
+- Add images to README
+
+## 0.1.1
 
 - Initial release
 - `MetalToggleCard` — animated toggle with metallic thumb shine
